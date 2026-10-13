@@ -2,13 +2,13 @@
 
 A tiny macOS menu bar app that shows your **Cline Pass** quota usage in real time — always visible, no need to dig into the Cline GUI.
 
-```
-Cline 🟢19% 🟢7% 🟢3%
-```
+![ClineQuota in the macOS menu bar](docs/menubar.png)
 
 That's: **5-hour session / weekly / monthly** utilization, refreshed automatically.
 
 Clicking the menu bar item shows progress bars, reset times, and quick actions:
+
+![ClineQuota dropdown menu](docs/menu-open.png)
 
 - 🟢/🟠/🔴 traffic-light indicator per quota (thresholds: 70% / 90%)
 - Progress bar + exact reset date/time for each window
@@ -23,21 +23,50 @@ visible over every window.
 
 ## Requirements
 
-- macOS with **Xcode Command Line Tools** (`xcode-select --install`) — needed only to build
+- macOS (tested on macOS 26)
+- **Xcode Command Line Tools** — needed only to build from source:
+  ```bash
+  xcode-select --install
+  ```
 - A Cline account with an active **Cline Pass** (or free tier) plan
 
-## Build & run
+## Installation
+
+### Option A — Download the prebuilt app (easiest)
+
+1. Download `ClineQuota.app.zip` from the
+   [latest release](https://github.com/Acwildweb/cline-quota-menubar/releases/latest)
+2. Unzip it and move `ClineQuota.app` wherever you like (e.g. `~/Applications`)
+3. The binary is **not code-signed**, so macOS Gatekeeper will block the first launch.
+   Either right-click → **Open** → **Open**, or run once:
+   ```bash
+   xattr -dr com.apple.quarantine /path/to/ClineQuota.app
+   ```
+4. Launch it:
+   ```bash
+   open /path/to/ClineQuota.app
+   ```
+
+### Option B — Build from source (recommended for developers)
 
 ```bash
+git clone https://github.com/Acwildweb/cline-quota-menubar.git
+cd cline-quota-menubar
 ./build.sh
 open ClineQuota.app
 ```
 
-Start at login (optional):
+### Start at login (optional)
 
 ```bash
 osascript -e 'tell application "System Events" to make login item at end with properties {path:"/full/path/to/ClineQuota.app", hidden:false}'
 ```
+
+Or manually: **System Settings → General → Login Items → +** → select `ClineQuota.app`.
+
+### Uninstall
+
+Quit from the menu (**Esci**), delete `ClineQuota.app`, and remove the login item if you added it.
 
 ## Authentication
 
