@@ -67,10 +67,20 @@ No token is stored or sent anywhere except `api.cline.bot`.
 - If Cline desktop is not running when the OAuth token expires, the app shows ⚠️ until you open
   Cline once (it renews the token) or you set `CLINE_API_KEY`.
 
-## Credits & contributing
+## Author & Credits
 
-Built as a weekend tool and donated to the Cline community. Issues and PRs welcome — e.g.
-localization (currently Italian labels), notifications at thresholds, credit balance display.
+**Developer:** Gianfranco Ringo
+**Company:** A.c. Wild S.a.s — Via Spagna, 33 · 90146 Palermo (Italy)
+**Email:** info@acwild.it · **Web:** https://www.acwild.it
+
+This app was designed and built with the technical assistance of
+**[Cline](https://cline.bot)** — the AI coding agent — using the Cline desktop app
+and its official API (`api.cline.bot`).
+
+## Contributing
+
+Issues and PRs welcome — e.g. localization (currently Italian labels),
+notifications at thresholds, credit balance display.
 
 ## License
 

@@ -1,3 +1,12 @@
+//
+//  ClineQuota.swift
+//  Real-time Cline Pass quota in the macOS menu bar.
+//
+//  Developer: Gianfranco Ringo
+//  A.c. Wild S.a.s — Via Spagna, 33 · 90146 Palermo (Italy) · info@acwild.it
+//  Built with the technical assistance of Cline (https://cline.bot) AI.
+//  License: MIT
+//
 import Cocoa
 import Foundation
 
